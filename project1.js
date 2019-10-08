@@ -16,8 +16,11 @@ function draw() {
 	 	background(0);
 		bars();
 	 }
-	
-	shape();
+	 fill(255);
+	 //noStroke();
+	let spark = new sparks(400,400,random(15,70), random(15,70));
+	spark.display();
+	//shape();
 
 	
 }
