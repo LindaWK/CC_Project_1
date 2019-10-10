@@ -4,24 +4,43 @@ let rectR, rectB, rectG;
 function setup() {
 	createCanvas(800,800);
 	background(0);
-}
+	}
 function draw() {
-	
+	let col = color(255);
 	rectR = random(255);
 	rectB = random(255);
 	rectG = random(255);
-	//background(0);
-	//bars()
+	background(0);
+	sparky(col);
 	 if (key == "b" || key == "B") {
 	 	background(0);
 		bars();
 	 }
-	 fill(255);
-	 //noStroke();
-	let spark = new sparks(400,400,random(15,70), random(15,70));
+	 if (key == "s" || key == "S") {
+	 	background(0);
+	 	sparky(col);
+	 }
+	if (key == "c" || key == "C") {
+		background(0);
+		col = color(rectB,rectR,rectG, 100);
+		sparky(col);
+		shape();
+	}
+	
+function sparky(col) {
+	//let [] pos = {2, 4, 6, 8};
+	fill(col);
+	let spark = new sparks(400,400,random(15,500), random(15,500));
 	spark.display();
-	//shape();
-
+	let spark1 = new sparks(200,400,random(15,100), random(15,100));
+	spark1.display();
+	let spark2 = new sparks(600,400,random(15,100), random(15,100));
+	spark2.display();
+	let spark3 = new sparks(400,200,random(15,100), random(15,100));
+	spark3.display();
+	let spark4 = new sparks(400,600,random(15,100), random(15,100));
+	spark4.display();
+}
 	
 }
 function bars() {
@@ -42,9 +61,13 @@ function shape() {
 	let randS = random(15,70);
 	fill(rectB,rectR,rectG, 100);
 	//ellipse(mouseX, mouseY, 100,100);
-	ellipse(randX, randY, randS,randS);
+	let spark_ = new sparks(randX, randY, random(15,100), random(15,100));
+	spark_.display();
+	//ellipse(randX, randY, randS,randS);
 }
 function mouseDragged() {
-	background(0);
-	//shape();
+	fill(255);
+	rect(0,0,width,height);
 }
+
+//my adjective is flashy

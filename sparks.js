@@ -2,6 +2,8 @@ class sparks{
 	constructor(circX,circY,circW,circH) {
 		this.posX = circX;
 		this.posY = circY;
+		// this.posX = mouseX;
+		// this.posY = mouseY;
 		this.sparkSize = circW;
 	}
 	display() {
@@ -11,6 +13,9 @@ class sparks{
 			pop();
 		}
 		pop();
+	}
+	clear() {
+		background(0);
 	}
 
 }
