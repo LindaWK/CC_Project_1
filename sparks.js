@@ -9,6 +9,7 @@ class sparks{
 	display() {
 		push();
 		for(let i= this.sparkSize; i <100; i+=10) {
+			push();
 			ellipse(this.posX, this.posY, this.sparkSize, this.sparkSize);
 			pop();
 		}
